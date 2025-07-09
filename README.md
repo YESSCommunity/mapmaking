@@ -1,10 +1,12 @@
-# Mapmaking Course Repository
+# YESS Mapmaking Course
 
-This repository contains Python scripts and sample datasets for generating a variety of maps, including single maps, multiple seasonal maps, and animated maps (GIFs). These materials are part of the Mapmaking course hosted by the YESS Community.
+This repository contains Python scripts and sample datasets for generating various types of maps, including single maps, multiple seasonal maps, and animated GIFs. These materials are part of the Mapmaking course hosted by the YESS Community.
 
-We are actively updating the scripts. You are welcome (and encouraged) to request specific features or suggest changes. We’ll do our best to accommodate them.
+We are actively updating the scripts, and you are welcome (and encouraged) to request specific features or suggest improvements. We'll do our best to accommodate your ideas.
 
 Have fun, and happy mapping!
+
+---
 
 ## Installation
 
@@ -20,30 +22,58 @@ To run the scripts in this repository, you will need the following Python packag
 
 ### Option 1: Install all at once
 
-`pip install -r requirements.txt`
+```bash
+pip install -r requirements.txt
+```
 
 ### Option 2: Install individually
 
-`pip install geopandas pandas matplotlib numpy shapely scipy imageio`
+```bash
+pip install geopandas pandas matplotlib numpy shapely scipy imageio
+```
 
 ### Note on GeoPandas
 
-GeoPandas has additional dependencies such as `fiona`, `pyproj`, and `gdal`, which can be tricky to install via pip. If you encounter issues, we recommend installing it via conda:
+GeoPandas requires additional dependencies such as `fiona`, `pyproj`, and `gdal`, which can be difficult to install via `pip`. If you encounter installation issues, we recommend using `conda`:
 
-`conda install geopandas`
+```bash
+conda install geopandas
+```
 
-This method usually handles all dependencies more smoothly, especially on Windows and Linux systems.
+This approach usually resolves all dependencies more reliably, especially on Windows and Linux systems.
 
-Once the packages are installed, you should be able to run the scripts without any issues.
+Once all packages are installed, you should be able to run the scripts without any issues.
+
+---
 
 ## Available Scripts
 
-Currently, the repository includes three main scripts:
+The repository currently includes the following main scripts:
 
-- Generate a single map with your sampling points interpolated inside your target shapefile.
-- Generate multiple maps (e.g., for different seasons or variables).
-- Create a GIF slideshow showing seasonal or time-series data for a location.
+- **Script_1**: Generates a single map with your sampling points interpolated within your target shapefile.  
+- **Script_2**: Generates multiple maps (e.g., for different seasons or variables).  
+- **Script_3**: Creates a GIF slideshow showing seasonal or time-series data for a location.  
 
-Dummy data is provided so you can get started right away, but the scripts are designed to work with your own `.shp` and `.csv` files. Each script includes several customization options to modify map elements and styles.
+Sample datasets are provided so you can get started right away. However, the scripts are designed to work with your own `.shp` and `.csv` files. Each script includes several customization options to adjust map elements and styles.
 
-If you'd like additional features or run into any issues, feel free to make a request or report a bug.
+If you'd like to request additional features or encounter any issues, feel free to open a request or report a bug.
+
+---
+
+## Sample Data Format
+
+**The sample data is structured as follows (first two rows shown):**
+
+*For single interpolation and study area map:*
+```
+SampleName,x,y,AQI
+S1,363626.6168816242,6279077.259971289,12.9
+S2,362471.5586498214,6274457.027044078,29.4
+```
+
+*For multiple maps and grids:*
+```
+SampleName,x,y,Date,AQI
+S1,363626.6168816242,6279077.259971289,2023-01-15,33.1
+S2,362471.5586498214,6274457.027044078,2023-01-15,16.1
+```
